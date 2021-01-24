@@ -3,26 +3,34 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
+    [SerializeField] float _moveSpeed;
+    [SerializeField] Gun _gun;
+    [SerializeField] Transform _firePoint;
     Rigidbody2D _rb;
-    Vector2 movementInput;
+    Vector2 _movementInput;
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
 
+    void Start()
+    {
+        _gun.Initialize(gameObject);
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
-        movementInput = context.ReadValue<Vector2>();
+        _movementInput = context.ReadValue<Vector2>();
     }
 
     public void OnFire(InputAction.CallbackContext context)
     {
+        _gun.Shoot(_firePoint);
     }
 
     void FixedUpdate()
     {
-        _rb.velocity = movementInput * moveSpeed;
+        _rb.velocity = _movementInput * _moveSpeed;
     }
 }

@@ -1,34 +1,22 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShooting : MonoBehaviour
+public class ShootingDirection : MonoBehaviour
 {
     [SerializeField] Camera _camera;
-    [SerializeField] Transform _firePoint;
     [SerializeField] Transform _playerTransform;
-    [SerializeField] Gun gun;
     Vector2 _mousePosition;
     Vector2 _projectedMousePosition;
     Vector2 _lookingDirection;
-    float _lookingAngle;
     PlayerInput _playerInput;
-    bool _isShooting;
+
+    float _lookingAngle;
 
     void Awake()
     {
         _playerInput = GetComponentInParent<PlayerInput>();
-    }
-    void Start()
-    {
-        gun.Initialize(_playerTransform.gameObject);
-    }
-
-    public void OnFire(InputAction.CallbackContext context)
-    {
-        if (context.started)
-            gun.Shoot(_firePoint);
     }
 
     void Update()

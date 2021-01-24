@@ -1522,12 +1522,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &397259568 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5314026718393315807, guid: 4f58a30670f42184eb7b49fe4f531b36,
-    type: 3}
-  m_PrefabInstance: {fileID: 5314026718102094575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,38 +2608,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5314026717927084304, guid: 4f58a30670f42184eb7b49fe4f531b36,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314026717927085806, guid: 4f58a30670f42184eb7b49fe4f531b36,
-        type: 3}
-      propertyPath: gun
-      value: 
-      objectReference: {fileID: 11400000, guid: b9c009152aa42e94880587d69fe86b63,
-        type: 2}
-    - target: {fileID: 5314026717927085806, guid: 4f58a30670f42184eb7b49fe4f531b36,
-        type: 3}
+    - target: {fileID: 194221057, guid: 4f58a30670f42184eb7b49fe4f531b36, type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 5314026717927085806, guid: 4f58a30670f42184eb7b49fe4f531b36,
-        type: 3}
-      propertyPath: _bulletPrefab
-      value: 
-      objectReference: {fileID: 7110931903374809806, guid: 990b05d9528599b468b7fb2553bfdd56,
-        type: 3}
-    - target: {fileID: 5314026717927085806, guid: 4f58a30670f42184eb7b49fe4f531b36,
-        type: 3}
-      propertyPath: _playerTransform
-      value: 
-      objectReference: {fileID: 397259568}
-    - target: {fileID: 5314026718193408909, guid: 4f58a30670f42184eb7b49fe4f531b36,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5314026718393315777, guid: 4f58a30670f42184eb7b49fe4f531b36,
         type: 3}
       propertyPath: m_Name
@@ -2706,6 +2672,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5314026718193408908, guid: 4f58a30670f42184eb7b49fe4f531b36, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f58a30670f42184eb7b49fe4f531b36, type: 3}

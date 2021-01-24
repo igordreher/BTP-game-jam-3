@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 7110931903374809806, guid: 990b05d9528599b468b7fb2553bfdd56,
     type: 3}
-  fireRate: 0
+  _fireRate: 2
   clipSize: 0

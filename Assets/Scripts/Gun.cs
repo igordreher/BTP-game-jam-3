@@ -7,7 +7,7 @@ public class Gun : ScriptableObject
 {
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] float _fireRate;
-    [SerializeField] int clipSize;
+    [SerializeField] int _clipSize;
     float _nextFireTime;
     GameObject _holder;
 
