@@ -14,6 +14,7 @@ public class PlayerShooting : MonoBehaviour
     Vector2 _lookingDirection;
     float _lookingAngle;
     PlayerInput _playerInput;
+    bool _isShooting;
 
     void Awake()
     {
@@ -26,9 +27,8 @@ public class PlayerShooting : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext context)
     {
-        if (!context.started)
-            return;
-        gun.Shoot(_firePoint);
+        if (context.started)
+            gun.Shoot(_firePoint);
     }
 
     void Update()
