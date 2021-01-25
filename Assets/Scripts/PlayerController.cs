@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform _firePoint;
     [SerializeField] GameObject _bulletPrefab;
     Rigidbody2D _rb;
-    IGun _gun;
+    Gun _gun;
     Vector2 _movementInput;
 
     void Awake()
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        _gun = new ShotGun(_firePoint, gameObject, _bulletPrefab);
+        _gun = new StandardGun(_firePoint, gameObject, _bulletPrefab);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext context)
     {
+        if (!context.started)
+            return;
         _gun.Shoot();
     }
 

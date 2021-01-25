@@ -2,35 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotGun : IGun
+public class ShotGun : Gun
 {
-    public float FireRate = 1;
-    float _nextFireTime;
-    GameObject _bulletPrefab;
-    Transform _firePoint;
-    GameObject _holder;
-
-    public ShotGun(Transform firePoint, GameObject holder, GameObject bulletPrefab)
+    public ShotGun(Transform firePoint, GameObject holder, GameObject bulletPrefab) : base(firePoint, holder, bulletPrefab)
     {
-        _firePoint = firePoint;
-        _holder = holder;
-        _bulletPrefab = bulletPrefab;
+        _fireRate = 1;
     }
 
-    public void Shoot()
+    public override void Shoot()
     {
         if (Time.time < _nextFireTime)
             return;
-        _nextFireTime = Time.time + 1 / FireRate;
+        _nextFireTime = Time.time + 1 / _fireRate;
 
         ShootThreeBullets();
     }
 
     void ShootThreeBullets()
     {
+        Quaternion rotation = _firePoint.rotation;
         for (int i = -1; i < 2; i++)
         {
-            Quaternion rotation = Quaternion.Euler(0, 0, _firePoint.rotation.y + i * 35f);
+            float offset = i * 25f;
+            rotation = Quaternion.Euler(_firePoint.eulerAngles.x, _firePoint.eulerAngles.y, _firePoint.eulerAngles.z + offset);
             GameObject bullet = MonoBehaviour.Instantiate(_bulletPrefab, _firePoint.position, rotation);
             bullet.GetComponent<Bullet>().SetUp(_holder);
         }

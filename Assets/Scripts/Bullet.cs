@@ -23,6 +23,8 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject == _sender)
             return;
+        if (other.gameObject.CompareTag("Bullet"))
+            return;
         Destroy(gameObject);
     }
 }
