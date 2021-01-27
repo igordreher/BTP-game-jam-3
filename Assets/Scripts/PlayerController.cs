@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
-    [SerializeField] Transform _firePoint;
+    Transform _firePoint;
     [SerializeField] GameObject _bulletPrefab;
     Rigidbody2D _rb;
     Gun[] _guns;
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _firePoint = GetComponentInChildren<Transform>();
     }
 
     void Start()
