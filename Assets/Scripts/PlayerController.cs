@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -7,7 +8,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform _firePoint;
     [SerializeField] GameObject _bulletPrefab;
     Rigidbody2D _rb;
-    Gun _gun;
+    Gun[] _guns;
+    Gun _currentGun;
+    int _selectedGun;
+    bool _isShooting;
     Vector2 _movementInput;
 
     void Awake()
@@ -17,7 +21,10 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        _gun = new StandardGun(_firePoint, gameObject, _bulletPrefab);
+        _guns = new Gun[2];
+        _guns[0] = new StandardGun(_firePoint, gameObject, _bulletPrefab);
+        _guns[1] = new ShotGun(_firePoint, gameObject, _bulletPrefab);
+        _currentGun = _guns[0];
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -27,9 +34,31 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext context)
     {
+        _isShooting = context.performed;
         if (!context.started)
             return;
-        _gun.Shoot();
+        _currentGun.Shoot();
+    }
+
+    public void OnSwitchGun(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+            return;
+
+        if (_selectedGun == 0)
+            _selectedGun++;
+        else
+            _selectedGun--;
+
+        _currentGun = _guns[_selectedGun];
+    }
+
+    void Update()
+    {
+        if (_isShooting)
+        {
+            _currentGun.Shoot();
+        }
     }
 
     void FixedUpdate()
