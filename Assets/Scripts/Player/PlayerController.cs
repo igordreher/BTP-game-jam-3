@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,38 +27,35 @@ public class PlayerController : MonoBehaviour
         _currentGun = _guns[0];
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    void Update()
     {
-        _movementInput = context.ReadValue<Vector2>();
+        GetInput();
+        if (_isShooting)
+        {
+            _currentGun.Shoot();
+        }
     }
 
-    public void OnFire(InputAction.CallbackContext context)
+    void GetInput()
     {
-        _isShooting = context.performed;
-        if (!context.started)
-            return;
-        _currentGun.Shoot();
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        _movementInput = new Vector2(horizontal, vertical);
+
+        _isShooting = Input.GetMouseButton(0);
+
+        if (Input.GetMouseButtonDown(1))
+            SwitchGun();
     }
 
-    public void OnSwitchGun(InputAction.CallbackContext context)
+    void SwitchGun()
     {
-        if (!context.started)
-            return;
-
         if (_selectedGun == 0)
             _selectedGun++;
         else
             _selectedGun--;
 
         _currentGun = _guns[_selectedGun];
-    }
-
-    void Update()
-    {
-        if (_isShooting)
-        {
-            _currentGun.Shoot();
-        }
     }
 
     void FixedUpdate()

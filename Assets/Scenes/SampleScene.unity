@@ -296,10 +296,6 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 1150061116, guid: 4f58a30670f42184eb7b49fe4f531b36, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 5314026718393315777, guid: 4f58a30670f42184eb7b49fe4f531b36,
         type: 3}
       propertyPath: m_Name
@@ -313,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 5314026718393315807, guid: 4f58a30670f42184eb7b49fe4f531b36,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.229
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5314026718393315807, guid: 4f58a30670f42184eb7b49fe4f531b36,
         type: 3}
