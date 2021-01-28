@@ -16,6 +16,13 @@ public class AsteroidSpawner : MonoBehaviour
 
     void SpawnAsteroid()
     {
+        float angle = transform.rotation.eulerAngles.z;
+        float randomAngle = Random.Range(angle - 25f, angle + 25f);
+        Instantiate(_asteroidPrefab, GetSpawnPoint(), Quaternion.Euler(0, 0, randomAngle));
+    }
+
+    Vector3 GetSpawnPoint()
+    {
         Vector3 spawnPoint;
         if (_axis == 0)
         {
@@ -29,7 +36,7 @@ public class AsteroidSpawner : MonoBehaviour
             var y2 = transform.position.y + _spawnSize / 2;
             spawnPoint = new Vector3(transform.position.x, Random.Range(y1, y2), 0);
         }
-        Instantiate(_asteroidPrefab, spawnPoint, transform.rotation);
+        return spawnPoint;
     }
 
     void OnDrawGizmos()
