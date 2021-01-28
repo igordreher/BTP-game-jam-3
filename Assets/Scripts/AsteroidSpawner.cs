@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CometSpawner : MonoBehaviour
+public class AsteroidSpawner : MonoBehaviour
 {
     [SerializeField] float _spawnTime;
-    [SerializeField] GameObject _cometPrefab;
+    [SerializeField] GameObject _asteroidPrefab;
     [SerializeField] float _spawnSize;
     [SerializeField] Axis _axis;
 
     void Start()
     {
-        InvokeRepeating("SpawnComet", 0, _spawnTime);
-
+        InvokeRepeating("SpawnAsteroid", 0, _spawnTime);
     }
 
-    void SpawnComet()
+    void SpawnAsteroid()
     {
         Vector3 spawnPoint;
         if (_axis == 0)
@@ -30,7 +29,7 @@ public class CometSpawner : MonoBehaviour
             var y2 = transform.position.y + _spawnSize / 2;
             spawnPoint = new Vector3(transform.position.x, Random.Range(y1, y2), 0);
         }
-        Instantiate(_cometPrefab, spawnPoint, transform.rotation);
+        Instantiate(_asteroidPrefab, spawnPoint, transform.rotation);
     }
 
     void OnDrawGizmos()

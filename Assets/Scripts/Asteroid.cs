@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Comet : MonoBehaviour
+public class Asteroid : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
     Rigidbody2D _rb;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6281803482907436638}
   - component: {fileID: 6281803482907436705}
   m_Layer: 0
-  m_Name: CometSpawner
+  m_Name: AsteroidSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTime: 1
-  _cometPrefab: {fileID: 6995869229720466280, guid: b9c2acd1c41e326408755d6b0bc18cda,
+  _asteroidPrefab: {fileID: 6995869229720466280, guid: b9c2acd1c41e326408755d6b0bc18cda,
     type: 3}
   _spawnSize: 15
+  _axis: 0
