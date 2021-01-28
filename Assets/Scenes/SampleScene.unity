@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 1325119692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 12, z: 1}
+  m_LocalScale: {x: 25, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -300,7 +300,7 @@ PrefabInstance:
     - target: {fileID: 6281803482907436638, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.04
+      value: 11.22
       objectReference: {fileID: 0}
     - target: {fileID: 6281803482907436638, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
         type: 3}
@@ -566,6 +566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AsteroidSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
+        type: 3}
+      propertyPath: _spawnSize
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
         type: 3}
