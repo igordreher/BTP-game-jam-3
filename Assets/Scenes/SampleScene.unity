@@ -471,6 +471,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7817ce9d33265df4d8e947c0dc65526d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5314026718102094578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314026718102094576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683b0e3c52513794cbfd79e25bfefa68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 7110931903374809806, guid: 990b05d9528599b468b7fb2553bfdd56,
+    type: 3}
+  _primaryGunFireRate: 7
+  _secundaryGunFireRate: 3
+--- !u!114 &5314026718102094579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314026718102094576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d03e9011823a0041a25b435316f6e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
 --- !u!1001 &6281803482377076446
 PrefabInstance:
   m_ObjectHideFlags: 0
