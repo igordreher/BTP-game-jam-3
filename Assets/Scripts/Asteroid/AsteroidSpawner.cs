@@ -5,20 +5,29 @@ using UnityEngine;
 public class AsteroidSpawner : MonoBehaviour
 {
     [SerializeField] float _spawnTime;
-    [SerializeField] GameObject _asteroidPrefab;
     [SerializeField] float _spawnSize;
     [SerializeField] Axis _axis;
+    [SerializeField] GameObject _asteroidPrefabLarge;
+    [SerializeField] GameObject _asteroidPrefab;
+    [SerializeField] GameObject _asteroidPrefabSmall;
+    GameObject[] _asteroids;
 
     void Start()
     {
         InvokeRepeating("SpawnAsteroid", 0, _spawnTime);
+        _asteroids = new GameObject[3];
+        _asteroids.SetValue(_asteroidPrefab, 0);
+        _asteroids.SetValue(_asteroidPrefabLarge, 1);
+        _asteroids.SetValue(_asteroidPrefabSmall, 2);
     }
 
     void SpawnAsteroid()
     {
         float angle = transform.rotation.eulerAngles.z;
         float randomAngle = Random.Range(angle - 25f, angle + 25f);
-        Instantiate(_asteroidPrefab, GetSpawnPoint(), Quaternion.Euler(0, 0, randomAngle));
+
+        int randomAsteroid = Random.Range(0, 2);
+        Instantiate(_asteroids[randomAsteroid], GetSpawnPoint(), Quaternion.Euler(0, 0, randomAngle));
     }
 
     Vector3 GetSpawnPoint()
