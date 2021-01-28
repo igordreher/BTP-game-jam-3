@@ -6,17 +6,15 @@ public class Asteroid : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
     Rigidbody2D _rb;
-    Vector2 _direction;
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _direction = new Vector2(-1, -1);
     }
 
     void FixedUpdate()
     {
-        _rb.velocity = _direction * _moveSpeed;
+        _rb.velocity = transform.up * _moveSpeed;
     }
 
     void OnCollisionEnter2D(Collision2D other)
