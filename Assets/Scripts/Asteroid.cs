@@ -18,4 +18,10 @@ public class Asteroid : MonoBehaviour
     {
         _rb.velocity = _direction * _moveSpeed;
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+            other.gameObject.GetComponent<IDamagable>().TakeDamage();
+    }
 }
