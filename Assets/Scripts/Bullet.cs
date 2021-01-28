@@ -25,6 +25,11 @@ public class Bullet : MonoBehaviour
             return;
         if (other.gameObject.CompareTag("Bullet"))
             return;
+
+        IDamageable damageable = other.GetComponent<IDamageable>();
+        if (damageable != null)
+            damageable.TakeDamage();
+
         Destroy(gameObject);
     }
 }

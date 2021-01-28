@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerDamaged : MonoBehaviour, IDamagable
+public class PlayerDamaged : MonoBehaviour, IDamageable
 {
     Scene _activeScene;
 
