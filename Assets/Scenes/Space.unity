@@ -195,6 +195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
+        type: 3}
       propertyPath: _spawnSize
       value: 11
       objectReference: {fileID: 0}
@@ -446,6 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
         type: 3}
+      propertyPath: _spawnTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
+        type: 3}
       propertyPath: _asteroidPrefab
       value: 
       objectReference: {fileID: 884956497081063989, guid: 9a6674ae44040a7498e22e2fa583100b,
@@ -523,6 +533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _axis
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
         type: 3}
@@ -739,6 +754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AsteroidSpawner Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6281803482907436705, guid: f8bd8ea31ee0e574197e75b2c3e5344d,
         type: 3}
