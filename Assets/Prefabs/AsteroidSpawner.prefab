@@ -43,8 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05aebdb8f8cd1db4c8aeaf662cdc0036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnTime: 1
-  _spawnSize: 15
+  _spawnSize: 20
   _axis: 0
   _asteroidPrefabLarge: {fileID: 884956497081063989, guid: 9a6674ae44040a7498e22e2fa583100b,
     type: 3}
@@ -52,3 +51,5 @@ MonoBehaviour:
     type: 3}
   _asteroidPrefabSmall: {fileID: 9186416960580366152, guid: 8f621411f04276245b07ca1413de397a,
     type: 3}
+  _spawnRaiseTime: 30
+  _spawnRaiseAmount: 0.1

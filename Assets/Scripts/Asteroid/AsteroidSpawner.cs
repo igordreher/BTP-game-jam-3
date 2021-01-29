@@ -4,30 +4,52 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    [SerializeField] float _spawnTime;
     [SerializeField] float _spawnSize;
     [SerializeField] Axis _axis;
     [SerializeField] GameObject _asteroidPrefabLarge;
     [SerializeField] GameObject _asteroidPrefab;
     [SerializeField] GameObject _asteroidPrefabSmall;
+    [SerializeField] float _spawnRaiseTime;
+    [SerializeField] float _spawnRaiseAmount;
     GameObject[] _asteroids;
+    float _nextSpawnRaiseTime;
+    float _spawnTime;
+    float SpawnTime
+    {
+        get => _spawnTime;
+        set => _spawnTime = Mathf.Clamp(value, 0, 5);
+    }
 
     void Start()
     {
-        InvokeRepeating("SpawnAsteroid", 0, _spawnTime);
+        SpawnTime = 2;
+        _nextSpawnRaiseTime = _spawnRaiseTime;
+
+        InitializeAsteroids();
+
+        StartCoroutine(SpawnAsteroid(1));
+    }
+
+    void InitializeAsteroids()
+    {
         _asteroids = new GameObject[3];
         _asteroids.SetValue(_asteroidPrefab, 0);
         _asteroids.SetValue(_asteroidPrefabLarge, 1);
         _asteroids.SetValue(_asteroidPrefabSmall, 2);
     }
 
-    void SpawnAsteroid()
+    IEnumerator SpawnAsteroid(float time)
     {
+        yield return new WaitForSeconds(time);
+
         float angle = transform.rotation.eulerAngles.z;
         float randomAngle = Random.Range(angle - 25f, angle + 25f);
 
         int randomAsteroid = Random.Range(0, 2);
         Instantiate(_asteroids[randomAsteroid], GetSpawnPoint(), Quaternion.Euler(0, 0, randomAngle));
+
+        yield return new WaitForSeconds(SpawnTime);
+        StartCoroutine(SpawnAsteroid(0));
     }
 
     Vector3 GetSpawnPoint()
@@ -46,6 +68,14 @@ public class AsteroidSpawner : MonoBehaviour
             spawnPoint = new Vector3(transform.position.x, Random.Range(y1, y2), 0);
         }
         return spawnPoint;
+    }
+
+    void Update()
+    {
+        if (Time.time < _nextSpawnRaiseTime)
+            return;
+        _nextSpawnRaiseTime = Time.time + _spawnRaiseTime;
+        SpawnTime -= _spawnRaiseAmount;
     }
 
     void OnDrawGizmos()
