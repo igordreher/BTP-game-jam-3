@@ -5,13 +5,8 @@ using UnityEngine;
 public class AsteroidLife : MonoBehaviour, IDamageable
 {
     [SerializeField] GameObject _smallerAsteroid;
+    Asteroid _asteroid;
     [SerializeField] int _life;
-    [SerializeField] int _scoreValue;
-    public int ScoreValue
-    {
-        get => _scoreValue;
-        set => _scoreValue = Mathf.Clamp(value, 0, 10);
-    }
     int Life
     {
         get => _life;
@@ -21,6 +16,11 @@ public class AsteroidLife : MonoBehaviour, IDamageable
             if (_life == 0)
                 Die();
         }
+    }
+
+    void Awake()
+    {
+        _asteroid = GetComponent<Asteroid>();
     }
 
     public void TakeDamage()
@@ -33,11 +33,13 @@ public class AsteroidLife : MonoBehaviour, IDamageable
         if (_smallerAsteroid != null)
         {
             GameObject asteroid = Instantiate(_smallerAsteroid, transform.position, transform.rotation);
-            asteroid.GetComponent<AsteroidLife>().ScoreValue = ScoreValue;
+            Asteroid smallerAsteroid = asteroid.GetComponent<Asteroid>();
+            smallerAsteroid.ScoreValue = _asteroid.ScoreValue;
+            smallerAsteroid.moveSpeed = _asteroid.moveSpeed + 1;
         }
         else
         {
-            Score.ScoreCount += ScoreValue;
+            Score.ScoreCount += _asteroid.ScoreValue;
         }
         Destroy(gameObject);
     }

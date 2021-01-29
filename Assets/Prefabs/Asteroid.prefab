@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9672f1c6e33f15b48b261a89d974801c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
+  _scoreValue: 3
+  moveSpeed: 4
 --- !u!114 &216368148468284120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,4 +152,3 @@ MonoBehaviour:
   _smallerAsteroid: {fileID: 9186416960580366152, guid: 8f621411f04276245b07ca1413de397a,
     type: 3}
   _life: 3
-  _scoreValue: 3

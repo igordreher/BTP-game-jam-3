@@ -45,7 +45,7 @@ public class AsteroidSpawner : MonoBehaviour
         float angle = transform.rotation.eulerAngles.z;
         float randomAngle = Random.Range(angle - 25f, angle + 25f);
 
-        int randomAsteroid = Random.Range(0, 2);
+        int randomAsteroid = Random.Range(0, 3);
         Instantiate(_asteroids[randomAsteroid], GetSpawnPoint(), Quaternion.Euler(0, 0, randomAngle));
 
         yield return new WaitForSeconds(SpawnTime);

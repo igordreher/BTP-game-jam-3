@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    [SerializeField] float _moveSpeed;
+    [SerializeField] int _scoreValue;
+    public int ScoreValue
+    {
+        get => _scoreValue;
+        set => _scoreValue = Mathf.Clamp(value, 0, 10);
+    }
+    public float moveSpeed;
     Transform _player;
     Rigidbody2D _rb;
     float _distanceFromPlayer;
@@ -24,7 +30,7 @@ public class Asteroid : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rb.velocity = transform.up * _moveSpeed;
+        _rb.velocity = transform.up * moveSpeed;
     }
 
     void OnCollisionEnter2D(Collision2D other)
