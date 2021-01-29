@@ -3,15 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamaged : MonoBehaviour, IDamageable
 {
-    Scene _activeScene;
-
-    void Start()
-    {
-        _activeScene = SceneManager.GetActiveScene();
-    }
+    [SerializeField] GameObject _gameOverMenu;
 
     public void TakeDamage()
     {
-        SceneManager.LoadScene(_activeScene.name);
+        Time.timeScale = 0;
+        _gameOverMenu.SetActive(true);
     }
 }

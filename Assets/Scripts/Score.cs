@@ -10,6 +10,11 @@ public class Score : MonoBehaviour
         _scoreText = GetComponent<TMPro.TextMeshProUGUI>();
     }
 
+    void Start()
+    {
+        ScoreCount = 0;
+    }
+
     void Update()
     {
         _scoreText.text = ScoreCount.ToString();

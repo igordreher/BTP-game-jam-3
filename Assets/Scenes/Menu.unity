@@ -804,13 +804,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1054,7 +1054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f590552b8231b48914f1e7f79a837e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: {fileID: 0}
 --- !u!1 &937876766
 GameObject:
   m_ObjectHideFlags: 0
