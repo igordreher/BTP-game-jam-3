@@ -74,7 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1caae1160c145524c916d9fb8caa59cd, type: 3}
+  m_Sprite: {fileID: -7323060457542821002, guid: 618dbbffff6dd3d468959a8e0b73c24d,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,6 +150,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _smallerAsteroid: {fileID: 9186416960580366152, guid: 8f621411f04276245b07ca1413de397a,
     type: 3}
-  _score: {fileID: 8660165178121297026, guid: c5853f78ba3d7684a8212248ba7a0d48, type: 3}
   _life: 3
   _scoreValue: 3

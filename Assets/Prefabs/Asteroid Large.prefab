@@ -29,6 +29,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6995869229720466280, guid: b9c2acd1c41e326408755d6b0bc18cda,
         type: 3}
+    - target: {fileID: 6995869229720466198, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995869229720466198, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995869229720466198, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6022224346326338935, guid: 618dbbffff6dd3d468959a8e0b73c24d,
+        type: 3}
+    - target: {fileID: 6995869229720466198, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995869229720466198, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995869229720466198, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995869229720466198, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6995869229720466199, guid: b9c2acd1c41e326408755d6b0bc18cda,
         type: 3}
       propertyPath: m_RootOrder
@@ -37,12 +73,12 @@ PrefabInstance:
     - target: {fileID: 6995869229720466199, guid: b9c2acd1c41e326408755d6b0bc18cda,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6995869229720466199, guid: b9c2acd1c41e326408755d6b0bc18cda,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6995869229720466199, guid: b9c2acd1c41e326408755d6b0bc18cda,
         type: 3}
@@ -98,6 +134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Asteroid Large
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995869229720466281, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9c2acd1c41e326408755d6b0bc18cda, type: 3}
