@@ -14,6 +14,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 216368148468284120, guid: b9c2acd1c41e326408755d6b0bc18cda,
         type: 3}
+      propertyPath: _score
+      value: 
+      objectReference: {fileID: 8660165178121297026, guid: c5853f78ba3d7684a8212248ba7a0d48,
+        type: 3}
+    - target: {fileID: 216368148468284120, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
+      propertyPath: _scoreValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 216368148468284120, guid: b9c2acd1c41e326408755d6b0bc18cda,
+        type: 3}
       propertyPath: _smallerAsteroid
       value: 
       objectReference: {fileID: 0}
